@@ -11,7 +11,6 @@ const Profile = () => {
     axios.get("auth/profile")
       .then(response => setUser(response.data))
       .catch(error => {
-        console.error("Error fetching profile:", error);
         if (error.response && error.response.status === 401) {
           navigate('/register');
         }
@@ -23,7 +22,7 @@ const Profile = () => {
       <div className="container">
         <div className="profile__wrapper">
           {user.avatar ? (
-            <img src={user.avatar} alt={user.name} />
+            <img src={user.avatar}  />
           ) : (
             <p>Loading...</p>
           )}

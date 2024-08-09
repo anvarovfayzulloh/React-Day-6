@@ -19,9 +19,9 @@ const Products = () => {
         <div className="products__wrapper">
           {
             products.map(product => (
-              <Link className="product" to={`/product/${product.id}`} >
+              <Link className="product" key={product.id} to={`/product/${product.id}`} >
                 <div  key={product.id}>
-                  <img src={product.images[0]} alt={product.title} />
+                  <img src={product.images[0]} />
                   <h3>{product.title.slice(0, 25)}</h3>
                   <p>{product.description.slice(0, 50)}...</p>
                 </div>
